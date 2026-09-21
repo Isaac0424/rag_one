@@ -1,0 +1,41 @@
+# RAG 실습 환경 (Python 3.13, Windows)
+# 설치: pip install -r requirements.txt
+
+# --- LangChain ---
+langchain==1.4.2
+langchain-core==1.6.3
+langchain-community==0.4.2
+langchain-openai==1.6.2
+langchain-text-splitters==1.1.2
+# SemanticChunker 제공. 현재 sunset 예정이라 경고가 출력됩니다.
+langchain-experimental==0.4.2
+
+# --- OpenAI / 토크나이저 ---
+openai==3.16.2
+tiktoken==0.14.0
+
+# --- 텍스트 분할용 토크나이저 ---
+# NLTKTextSplitter 사용 시 별도 데이터 필요: nltk.download("punkt_tab")
+nltk==3.10.3
+# SpacyTextSplitter 사용 시 모델 필요: python -m spacy download en_core_web_sm
+spacy==3.8.16
+# SentenceTransformersTokenTextSplitter (최초 실행 시 모델 자동 다운로드)
+sentence-transformers==6.1.0
+
+# --- 문서 로더 ---
+beautifulsoup4==4.15.0        # WebBaseLoader
+unstructured==0.27.6          # DirectoryLoader. 마크다운은 unstructured[md]
+olefile==0.47                 # HWP 로더
+pandas==2.3.3                 # CSV 로더
+
+# --- 기타 ---
+python-dotenv==1.2.3          # .env 에서 OPENAI_API_KEY 로드
+nest-asyncio==1.6.0           # 노트북 내 비동기 로더
+requests==2.34.2
+
+# --- Windows 전용 ---
+# unstructured 의 파일 타입 감지에 필요 (Linux/macOS 는 libmagic 사용)
+python-magic-bin==0.4.14; sys_platform == "win32"
+
+# --- 노트북 실행 ---
+ipykernel==7.3.0
