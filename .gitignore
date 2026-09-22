@@ -172,3 +172,10 @@ Desktop.ini
 credentials.json
 service-account*.json
 token.json
+
+# Project-local caches and stores
+cache/
+data/
+images/
+faiss_db/
+sparse_encoder.pkl
